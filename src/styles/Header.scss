@@ -1,0 +1,46 @@
+.title {
+  text-align: center;
+  text-transform: capitalize;
+}
+
+.logoSponsor {
+  height: 46px;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    
+    background-color: white;
+    padding: 15px;
+    border-bottom: solid 1px var(--warm-grey);
+  }
+  
+  .header .header__brand {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    padding: 7px 5px;
+    gap: 7px;
+  }
+  
+  .header .header__companyLogo {
+    height: 31px;
+    color: var(--dark-blue);
+  }
+  
+  .header .header__title {
+    font: var(--font-title-brand);
+    text-transform: capitalize;
+    color: var(--dark-blue);
+  }
+  
+  @media screen and (min-width: 768px) {
+    .main {
+      max-width: 980px;
+      margin-inline: auto;
+      display: grid;
+      grid-template-columns: 6fr 5fr;
+      gap: 2rem;
+    }
+  }
