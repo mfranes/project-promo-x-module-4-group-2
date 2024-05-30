@@ -85,3 +85,13 @@ values('cocktail database','find your drink','html css js','https://github.com/A
 select * from project;
 UPDATE  project set slogan = 'iPhone presentation' where idProject =7;
 
+ALTER TABLE project ADD COLUMN fkAuthor INT;
+ALTER TABLE project ADD FOREIGN KEY (fkAuthor)
+REFERENCES author (idAuthor);
+
+SELECT project.name, author.name
+FROM project INNER JOIN author ON project.fkAuthor = author.idAuthor;
+
+SELECT * FROM author;
+
+
