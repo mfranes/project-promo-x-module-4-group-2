@@ -102,4 +102,4 @@ FROM project INNER JOIN author ON project.fkAuthor = author.idAuthor;
 
 SELECT * FROM author;
 
-s
+
