@@ -118,13 +118,19 @@ const Form = (props) => {
         <fieldset className="addForm__group--upload">
           <legend className="addForm__title">Upload your images</legend>
           <div className="group_buttons">
-            <GetAvatar id="image" text="Subir foto del proyecto" updateAvatar={props.updateAvatar}/>
-            <GetAvatar id="photo" text="Subir foto de la autora" updateAvatar={props.updateAvatar}/>
+            <div className="group_buttons-btn">
+              <i className="fa-solid fa-image group_buttons-btn--icon"></i>
+              <GetAvatar id="image" text="Subir foto del proyecto" updateAvatar={props.updateAvatar}/>
+            </div>
+            <div className="group_buttons-btn">
+              <i className="fa-solid fa-image group_buttons-btn--icon"></i>
+              <GetAvatar id="photo" text="Subir foto de la autora" updateAvatar={props.updateAvatar}/>
+            </div>
           </div>
-
-          <Button data={props.data} postData={postData} addNewProject={props.addNewProject}/>
-
-          
+          <div className="group_save_reset">
+            <Button data={props.data} postData={postData} addNewProject={props.addNewProject}/>
+            <button className="btn_rst"><i className="fa-solid fa-trash-can group_save_reset-icon"></i></button>
+          </div>
         </fieldset>
         <div className="cardURL">
           {cardURL}

@@ -11,7 +11,6 @@ const Preview = ({data}) => {
         <Profile avatar={data.image} scssClass="projectImage" defaultImg={ebook}/>
         {/* <div className="projectImage" style={`background-image: {data.image}`}></div> */}
         <Card props={data}/>
-        <button className="btn_rst"><i className="fa-solid fa-trash-can"></i></button>
     </section>
   )
 }

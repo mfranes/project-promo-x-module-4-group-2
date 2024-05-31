@@ -3,29 +3,14 @@
 }
 
 .get-avatar__label {
-  // display: flex;
   width: 100%;
-  // align-items: center;
-  // justify-content: center;
-  padding: 5px 18px;
   color: var(--dark-blue);
   font: var(--font-normal);
   text-transform: none;
   text-decoration: underline;
-  text-align: center;
-  //border-radius: 40px;  
-  //background-color: var(--pale-lilac);
-  border: dotted 1.5px var(--lilac);
-  
-
-  &:hover {
-  
-    color: #fff;
-  }
+  text-align: left;
 
   cursor: pointer;
-  
-
 }
 
 .get-avatar__upload-field {
