@@ -23,17 +23,17 @@
     // color: var(--dark-blue);
   }
   
-  .card .card__projectTitle::before {
-    content: '';
-    position: absolute;
-    top: calc( 50% - 1px );
-    bottom: calc( 50% - 1px );
-    left: 0;
-    right: 0;
-    z-index: 0;
+  // .card .card__projectTitle::before {
+  //   content: '';
+  //   position: absolute;
+  //   top: calc( 50% - 1px );
+  //   bottom: calc( 50% - 1px );
+  //   left: 0;
+  //   right: 0;
+  //   z-index: 0;
     
-    background: linear-gradient(90deg, rgba(160,199,250,1) 0%, transparent, rgba(148,187,233,1) 100%);
-  }
+  //   background: linear-gradient(90deg, rgba(160,199,250,1) 0%, transparent, rgba(148,187,233,1) 100%);
+  // }
   
   .card .card__projectTitle--text {
     position: relative;

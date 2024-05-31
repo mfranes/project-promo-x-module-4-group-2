@@ -60,7 +60,7 @@ const FakeCard = ({data}) => {
     <button onClick={showPopup}>
       {visible && <Popup handleClose={closePopup}/>}
       <article className="card">
-            <h2 className="card__projectTitle"><span className="card__projectTitle--text">Proyecto Personal</span></h2>
+            <h2 className="card__projectTitle"><span className="card__projectTitle--text"></span></h2>
             <div className="card__author">
               <Profile scssClass="card__authorPhoto" avatar={photo} defaultImg={avatar}/>
               <p className="card__job">

@@ -116,11 +116,15 @@ const Form = (props) => {
         </fieldset>
     
         <fieldset className="addForm__group--upload">
-          <GetAvatar id="image" text="Subir foto del proyecto" updateAvatar={props.updateAvatar}/>
-
-          <GetAvatar id="photo" text="Subir foto de la autora" updateAvatar={props.updateAvatar}/>
+          <legend className="addForm__title">Upload your images</legend>
+          <div className="group_buttons">
+            <GetAvatar id="image" text="Subir foto del proyecto" updateAvatar={props.updateAvatar}/>
+            <GetAvatar id="photo" text="Subir foto de la autora" updateAvatar={props.updateAvatar}/>
+          </div>
 
           <Button data={props.data} postData={postData} addNewProject={props.addNewProject}/>
+
+          
         </fieldset>
         <div className="cardURL">
           {cardURL}
