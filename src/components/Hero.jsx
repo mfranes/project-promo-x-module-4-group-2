@@ -4,9 +4,9 @@ import "../styles/Hero.scss";
 const Hero = () => {
   return (
     <section className="hero">
-        <h2 className="title">Proyectos molones</h2>
-        <p className="hero__text">Escaparate en línea para recoger ideas a través de la tecnología</p>
-        <Link className="button--link" to="/">Ver proyectos</Link>
+        <h2 className="title">Proyect Sphere</h2>
+        <p className="hero__text">Get inspired and share your projects</p>
+        <Link className="button--link" to="/">See projects</Link>
       </section>
   )
 }

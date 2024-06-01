@@ -1,15 +1,15 @@
-import logoAdalab from '../images/adalab.png';
+import logoPS from '../images/projectsphere_logo.svg';
 import laptop from '../images/laptop-code-solid.svg';
 import "../styles/Header.scss"
 
 const Header = () => {
   return (
     <header className="header">
-      <a className="header__brand" href="./" title="Haz click para volver a la página inicial">
-        <img className="header__companyLogo" src={laptop} alt="Logo proyectos molones"/>
-        <h1 className="header__title">Proyectos molones</h1>
+      <a className="header__brand" href="./" title="Click to return to home page">
+        <img className="header__companyLogo" src={laptop} alt="Logo D.D."/>
+        <h1 className="header__title">Desarrolladoras Desquiciadas</h1>
       </a>
-      <img className="logoSponsor" src={logoAdalab}  alt="Logo Adalab"/>
+      <img className="logoSponsor" src={logoPS}  alt="Project Sphere Logo"/>
     </header>
   )
 }

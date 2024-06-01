@@ -40,7 +40,7 @@ const FakeCard = ({data}) => {
                 <img src={Git} alt="" />
               </a>
             </div>
-            <button className="popup__button-ver">Ver proyecto</button>
+            <button className="popup__button-ver">See project</button>
           </div>
         </div>
       );
@@ -72,7 +72,7 @@ const FakeCard = ({data}) => {
             <div className="card__project">
               <h3 className="card__name">{name || "Elegant Workspace"}</h3>
               <p className="card__slogan">{slogan || "Diseños Exclusivos"}</p>
-              <h3 className="card__descriptionTitle">Descripción del Producto</h3>
+              <h3 className="card__descriptionTitle">Product Description</h3>
               <p className="card__description">{desc || "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nulla, quos? Itaque, molestias eveniet laudantium adipisci vitae ratione"}</p>
               <div className="card__technicalInfo">
                 <p className="card__technologies">{technologies || "React JS - HTML - CSS"}</p>

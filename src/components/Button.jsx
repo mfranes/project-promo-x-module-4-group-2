@@ -11,7 +11,7 @@ const Button = ({data, postData, addNewProject}) => {
     }
 
   return (
-    <button className="button--large" onClick={handleClick}>Guardar proyecto</button>
+    <button className="button--large" onClick={handleClick}>Save Project</button>
   )
 }
 

@@ -24,16 +24,16 @@ const Card = ({props}) => {
           <div className="card__project">            
             <h3 className="card__name">{name || "Elegant Workspace"}</h3>
             <p className="card__slogan">{slogan || "Diseños Exclusivos"}</p>
-            <h3 className="card__descriptionTitle">Descripción del Producto</h3>
+            <h3 className="card__descriptionTitle">Product Description</h3>
             <p className="card__description">{desc || "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nulla, quos? Itaque, molestias eveniet laudantium adipisci vitae ratione"}</p>
 
             <div className="card__technicalInfo">
               <p className="card__technologies">{technologies || "React JS - HTML - CSS"}</p>
           
-              <a className="icon icon__www" href={urldemo} title="Haz click para ver el proyecto online" target="_blank">
+              <a className="icon icon__www" href={urldemo} title="Click here to see the project online" target="_blank">
                 Web link
               </a>
-              <a className="icon icon__github" href={urlrepo} title="Haz click para ver el código del proyecto" target="_blank">
+              <a className="icon icon__github" href={urlrepo} title="Click here to see the project code" target="_blank">
                 GitHub link
               </a>
             </div>
