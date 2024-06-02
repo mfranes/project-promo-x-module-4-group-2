@@ -24,7 +24,7 @@ const Card = ({props}) => {
           <div className="card__project">            
             <h3 className="card__name">{name || "Elegant Workspace"}</h3>
             <p className="card__slogan">{slogan || "Diseños Exclusivos"}</p>
-            <h3 className="card__descriptionTitle">Product Description</h3>
+            {/* <h3 className="card__descriptionTitle">Product Description</h3> */}
             <p className="card__description">{desc || "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nulla, quos? Itaque, molestias eveniet laudantium adipisci vitae ratione"}</p>
 
             <div className="card__technicalInfo">

@@ -1,0 +1,8 @@
+.detail{
+    min-height: calc(100vh - 165px);
+    width: 100vw;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: minmax(200px, 600px);
+    justify-content: center;
+}

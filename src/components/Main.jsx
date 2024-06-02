@@ -9,7 +9,7 @@ import "../styles/Main.scss";
 const Main = ({getInput, updateAvatar, data, addNewProject, resetData, setData}) => {
   return (
     <>
-    <Hero/>
+    <Hero text="See projects" link="/"/>
     <main className="main">
       <Preview data={data}/>
       <Form getInput={getInput} updateAvatar={updateAvatar} data={data} addNewProject={addNewProject} resetData={resetData}/>

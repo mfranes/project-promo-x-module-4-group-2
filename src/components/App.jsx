@@ -10,6 +10,7 @@ import {useEffect, useState} from 'react';
 // Importamos el servicio del local storage
 import ls from '../services/localStorage';
 import postData from '../services/postData';
+import DetailProject from './DetailProject';
 
 function App() {
 
@@ -80,7 +81,7 @@ function App() {
       <Routes>
         <Route path='/' element={<Landing allProjects={allProjects} data={data}/>}/>
         <Route path='/createproject' element={<Main getInput={getInput} updateAvatar={updateAvatar} data={data} addNewProject={addNewProject} resetData={resetData}/>}/>
-        <Route path='/projectdetail' element={<DetailPage data={data}/>}/>
+        <Route path='/projectdetail' element={<DetailProject data={data}/>}/>
       </Routes>
       <Footer/>
     </div>

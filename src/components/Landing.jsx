@@ -1,6 +1,6 @@
 import Footer from "./Footer"
 import Header from "./Header"
-import HeroLanding from "./HeroLanding"
+import Hero from "./Hero";
 import ebook from '../images/ebook-example.jpg';
 import { Link } from "react-router-dom";
 import FakeCard from "./FakeCard";
@@ -17,7 +17,7 @@ const Landing = ({allProjects, data, cardURL}) => {
 
   return (
     <>
-    <HeroLanding/>
+    <Hero text="New Project" link="/createproject"/>
     <section className="section_mockup">
       {landingCards}
       {/* <FakeCard data={data} cardURL={cardURL} className="section_mockup-card"/>

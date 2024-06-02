@@ -5,6 +5,7 @@ import avatar from'../images/avatar.webp';
 import { useState, useRef } from "react";
 import Web from '../images/icons/globe-solid.svg'
 import Git from '../images/icons/github.svg'
+import { Link } from "react-router-dom";
 
 const FakeCard = ({data}) => {
 
@@ -40,7 +41,8 @@ const FakeCard = ({data}) => {
                 <img src={Git} alt="" />
               </a>
             </div>
-            <button className="popup__button-ver">See project</button>
+
+            <Link className="popup__button-ver" to='/projectdetail'>See project</Link>
           </div>
         </div>
       );
@@ -72,7 +74,7 @@ const FakeCard = ({data}) => {
             <div className="card__project">
               <h3 className="card__name">{name || "Elegant Workspace"}</h3>
               <p className="card__slogan">{slogan || "Diseños Exclusivos"}</p>
-              <h3 className="card__descriptionTitle">Product Description</h3>
+              {/* <h3 className="card__descriptionTitle">Product Description</h3> */}
               <p className="card__description">{desc || "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nulla, quos? Itaque, molestias eveniet laudantium adipisci vitae ratione"}</p>
               <div className="card__technicalInfo">
                 <p className="card__technologies">{technologies || "React JS - HTML - CSS"}</p>

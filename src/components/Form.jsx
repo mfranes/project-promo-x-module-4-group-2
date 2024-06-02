@@ -5,6 +5,7 @@ import GetAvatar from "./GetAvatar";
 import PropTypes from "prop-types";
 import { useState } from 'react';
 import ls from '../services/localStorage';
+import { Link } from "react-router-dom";
 
 const Form = (props) => {
   const [cardURL, setCardURL] = useState("")
@@ -65,14 +66,15 @@ const Form = (props) => {
             if(dataResponse.success){
                 console.log(dataResponse.cardURL)
                 setCardURL(
-                  <a href={dataResponse.cardURL} target="_blank" className="linkProject">
-                    View your Project 
-                    <i className="fa-solid fa-square-arrow-up-right linkProject_icon"></i>
-                  </a>
+                  // <a href={dataResponse.cardURL} target="_blank" className="linkProject">
+                    <Link to='/projectdetail'>View your Project 
+                  <i className="fa-solid fa-square-arrow-up-right linkProject_icon"></i></Link>
+                    
+                  // </a>
                 )
                 // ls.set('data', data);
                 props.addNewProject();
-                props.resetData();
+                // props.resetData();
                 
              }
              else {
