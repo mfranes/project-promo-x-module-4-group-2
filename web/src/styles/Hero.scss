@@ -2,7 +2,22 @@
     margin-bottom: 3rem;
     padding: 20px 0;
     background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 
+
+    &__logo{
+      width: 250px;
+    }
+
+    &__text {
+      font: var(--font-text-big);
+      color: var(--light-blue);
+      text-align: center;
+      margin-inline: 4rem;
+      margin-bottom: 1.8rem;
+    }
   }
   
   .hero .title {
@@ -11,10 +26,3 @@
     margin-bottom: 8px;
   }
   
-  .hero .hero__text {
-    font: var(--font-text-big);
-    color: var(--light-blue);
-    text-align: center;
-    margin-inline: 4rem;
-    margin-bottom: 1.8rem;
-  }

@@ -1,4 +1,4 @@
-import logoPS from '../images/projectsphere_logo.svg';
+import logoPS from '../images/logo_simple.svg';
 import laptop from '../images/laptop-code-solid.svg';
 import "../styles/Header.scss"
 import { useLocation } from 'react-router-dom';
@@ -13,7 +13,10 @@ const Header = () => {
         <img className="header__companyLogo" src={laptop} alt="Logo D.D."/>
         <h1 className="header__title">Desarrolladoras Desquiciadas</h1>
       </a>
-      <img className="logoSponsor" src={logoPS}  alt="Project Sphere Logo"/>
+      <div className='header__dayNightMode'>
+        <i className="fa-solid fa-sun"></i>
+        <i className="fa-solid fa-moon"></i>
+      </div>
     </header>
   )
 }

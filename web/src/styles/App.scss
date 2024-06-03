@@ -34,6 +34,40 @@
   --pale-neutral: #DCDBF2;
   --pale-lilac: #DFC8F8;
 
+  /* Dark Mode */
+
+  --darkmode-background: #121212;
+  --darkmode-200: #282828;
+  --darkmode-300: #3f3f3f;
+  --darkmode-400: #575757;
+  --darkmode-500: #717171;
+  --darkmode-600: #8b8b8b;
+  --primary-contrast: #5956E0;
+  --darkmode-font: #ffffff;
+  //filter for images in dark mode:
+  --grayscale-percentage: 50%;
+  /* 
+  add this to any imgs on the page: 
+
+  img {
+    filter: grayscale(var(--grayscale-percentage));
+  } 
+
+  */
+
+  /* Dark Mode General Key:
+
+  Background: body background
+  200: card background, input fields
+  300: buttons
+  400: navbar, aside backgrounds
+  500: modal + popup background
+  600: background/secondary texts
+  All text in white
+  Main buttons, links, etc in primary colour
+
+  */
+
 
   /* FONTS */
 
@@ -79,5 +113,7 @@
   background-repeat: no-repeat;
 }
 
-
-
+.container-dark{
+  background-color: var(--darkmode-background);
+  color: var(--darkmode-font);
+}

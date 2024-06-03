@@ -75,7 +75,7 @@ function App() {
   
 
   return (
-    <div className="container">
+    <div className="container container.dark">
       <Header/>
       <Routes>
         <Route path='/' element={<Landing allProjects={allProjects} data={data}/>}/>

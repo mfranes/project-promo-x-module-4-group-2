@@ -13,97 +13,85 @@
     backdrop-filter: blur(20px);
     background-color: rgba($color: #fff, $alpha: 0.75);
 
-    
+    &__projectTitle {
+      grid-column: 2;
+      position: relative;
+      margin: 15px 10px 1rem 0;
+      text-align: center;
+      text-transform: capitalize;
+      font: var(--font-card-section);
+
+      &--text {
+        position: relative;
+        padding-inline: 0.1em;
+        z-index: 1;
+      }
+    }
+
+    &__author {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 10px;
+
+      .fakeCard__authorPhoto {
+        width: 75px;
+        height: 75px;
+        border-radius: 50%;
+        background-image: url('../images/avatar.webp');
+        background-position: center;
+        background-size: cover;
+        margin-bottom: 0.8rem;
+      }
+    }
+
+    &__job {
+      margin-bottom: 0.2rem;
+      text-align: center;
+    }
+
+    &__name--author {
+      text-align: center;
+    }
+
+    &__project {
+      margin-right: 10px;
+
+      &--name {
+        font: var(--font-card-title);
+        margin-bottom: .2rem;
+        color: var(--dark-blue);
+      }
+
+      &--slogan {
+        font: var(--font-card-subtitle);
+        margin-top: -.2rem;
+        margin-bottom: .8rem;
+        color: var(--light-blue);
+      }
+      
+      &--technicalInfo {
+        margin-block: 1.8rem;
+
+        &--technologies {
+          font: var(--font-card-tech);
+        }
+      }
+    }
+
     @media screen and (minwidth: 768px) {
-        width: 45%;
+      width: 45%;
+    }
+
+    @media (prefers-color-scheme: dark){
+      
     }
   }
-  
-  .fakeCard .fakeCard__projectTitle {
-    grid-column: 2;
-    position: relative;
-    margin: 15px 10px 1rem 0;
-    text-align: center;
-    text-transform: capitalize;
-  
-    font: var(--font-card-section);
-  }
-  
-  // .fakeCard .fakeCard__projectTitle::before {
-  //   content: '';
-  //   position: absolute;
-  //   top: calc( 50% - 1px );
-  //   bottom: calc( 50% - 1px );
-  //   left: 0;
-  //   right: 0;
-  //   z-index: 0;
-  
-  //   background: linear-gradient(90deg, rgba(160,199,250,1) 0%, transparent, rgba(148,187,233,1) 100%);
-  // }
-  
-  .fakeCard .fakeCard__projectTitle--text {
-    position: relative;
-    padding-inline: 0.1em;
-    z-index: 1;
-    //background-color: var(--color-white);
-  }
-  
-  .fakeCard .fakeCard__author {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: 10px;
-  }
-  
-  .fakeCard .fakeCard__authorPhoto {
-    width: 75px;
-    height: 75px;
-    border-radius: 50%;
-    background-image: url('../images/avatar.webp');
-    background-position: center;
-    background-size: cover;
-    margin-bottom: 0.8rem;
-  }
-  
-  .fakeCard .fakeCard__job {
-    margin-bottom: 0.2rem;
-    text-align: center;
-  }
-  
-  .fakeCard .fakeCard__name {
-    font: var(--font-card-title);
-    margin-bottom: .2rem;
-    color: var(--dark-blue);
-  }
 
-  .fakeCard .fakeCard__name--author {
-    text-align: center;
-  }
-  
-  .fakeCard .fakeCard__project {
-    margin-right: 10px;
-  }
-  
-  .fakeCard .fakeCard__slogan {
-    font: var(--font-card-subtitle);
-    margin-top: -.2rem;
-    margin-bottom: .8rem;
-    color: var(--light-blue);
-  }
-  
-  .fakeCard .fakeCard__descriptionTitle {
-    font-weight: inherit;
-    text-transform: capitalize;
-  }
-  
-  .fakeCard .fakeCard__technicalInfo {
-    margin-block: 1.8rem;
-  }
-  
-  .fakeCard .fakeCard__technologies {
-    font: var(--font-card-tech);
-    
-  }
+  // .fakeCard .fakeCard__descriptionTitle {
+  //   font-weight: inherit;
+  //   text-transform: capitalize;
+  // }
 
   button{
     border: none;

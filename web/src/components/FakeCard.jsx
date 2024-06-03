@@ -72,12 +72,12 @@ const FakeCard = ({data}) => {
             </div>
       
             <div className="card__project">
-              <h3 className="card__name">{name || "Elegant Workspace"}</h3>
-              <p className="card__slogan">{slogan || "Diseños Exclusivos"}</p>
+              <h3 className="card__project--name">{name || "Elegant Workspace"}</h3>
+              <p className="card__project--slogan">{slogan || "Diseños Exclusivos"}</p>
               {/* <h3 className="card__descriptionTitle">Product Description</h3> */}
-              <p className="card__description">{desc || "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nulla, quos? Itaque, molestias eveniet laudantium adipisci vitae ratione"}</p>
-              <div className="card__technicalInfo">
-                <p className="card__technologies">{technologies || "React JS - HTML - CSS"}</p>
+              <p className="card__project--description">{desc || "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nulla, quos? Itaque, molestias eveniet laudantium adipisci vitae ratione"}</p>
+              <div className="card__project--technicalInfo">
+                <p className="card__project--technicalInfo--technologies">{technologies || "React JS - HTML - CSS"}</p>
                 {/* <a className="icon icon__www" href={urldemo} title="Haz click para ver el proyecto online" target="_blank">
                 Web link
               </a>
