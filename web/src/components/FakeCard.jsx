@@ -29,20 +29,20 @@ const FakeCard = ({data}) => {
       return (
         <div ref={modalRef} className="graphpop">
           <div className="popup">
-            <button onClick={closeWithAnimation} className="popup__button-close">X</button>
+            <button onClick={closeWithAnimation} className="popup__button-close"><i className="fa-solid fa-xmark"></i></button>
             <img src={image} alt="" className="popup__img"/>
             <h3 className="popup__name">{name}</h3>
             <p className="popup__slogan">{slogan}</p>
             <div className="popup__links">
-              <a className="popup__links-linkweb" href={demo} title="Haz click para ver el proyecto online" target="_blank">
+              <a className="popup__links-linkweb" href={demo} title="Click to see project's demo" target="_blank">
                 <img src={Web} alt="" />
               </a>
-              <a className="popup__links-linkrepo" href={repo} title="Haz click para ver el código del proyecto" target="_blank">
+              <a className="popup__links-linkrepo" href={repo} title="Click to see project's code" target="_blank">
                 <img src={Git} alt="" />
               </a>
             </div>
 
-            <Link className="popup__button-ver" to='/projectdetail'>See project</Link>
+            <Link className="popup__button-see" to='/projectdetail'>See project</Link>
           </div>
         </div>
       );
@@ -59,35 +59,32 @@ const FakeCard = ({data}) => {
     }
 
   return (
-    <button onClick={showPopup}>
+    <div onClick={showPopup} className="fakecard">
       {visible && <Popup handleClose={closePopup}/>}
       <article className="card">
-            <h2 className="card__projectTitle"><span className="card__projectTitle--text"></span></h2>
-            <div className="card__author">
-              <Profile scssClass="card__authorPhoto" avatar={photo} defaultImg={avatar}/>
-              <p className="card__job">
-                {job || "Full stack Developer"}
-              </p>
-              <h3 className="card__name--author">{autor || "Emmelie Bjôrklund"}</h3>
-            </div>
+          <h2 className="card__projectTitle"><span className="card__projectTitle--text"></span></h2>
+
+          <div className="card__author">
+            <Profile scssClass="card__authorPhoto" avatar={photo} defaultImg={avatar}/>
+            <p className="card__job">
+              {job || "Full stack Developer"}
+            </p>
+            <h3 className="card__name--author">{autor || "Emmelie Bjôrklund"}</h3>
+          </div>
       
-            <div className="card__project">
-              <h3 className="card__project--name">{name || "Elegant Workspace"}</h3>
-              <p className="card__project--slogan">{slogan || "Diseños Exclusivos"}</p>
-              {/* <h3 className="card__descriptionTitle">Product Description</h3> */}
-              <p className="card__project--description">{desc || "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nulla, quos? Itaque, molestias eveniet laudantium adipisci vitae ratione"}</p>
-              <div className="card__project--technicalInfo">
-                <p className="card__project--technicalInfo--technologies">{technologies || "React JS - HTML - CSS"}</p>
-                {/* <a className="icon icon__www" href={urldemo} title="Haz click para ver el proyecto online" target="_blank">
-                Web link
-              </a>
-              <a className="icon icon__github" href={urlrepo} title="Haz click para ver el código del proyecto" target="_blank">
-                GitHub link
-              </a> */}
-              </div>
+          <div className="card__project">            
+            <h3 className="card__name">{name || "Elegant Workspace"}</h3>
+            <p className="card__slogan">{slogan || "Diseños Exclusivos"}</p>
+            {/* <h3 className="card__descriptionTitle">Product Description</h3> */}
+            <p className="card__description">{desc || "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nulla, quos? Itaque, molestias eveniet laudantium adipisci vitae ratione"}</p>
+
+            <div className="card__technicalInfo">
+              <p className="card__technologies">{technologies || "React JS - HTML - CSS"}</p>
+          
             </div>
-      </article>
-    </button>
+          </div>
+    </article>
+    </div>
   )
 }
 

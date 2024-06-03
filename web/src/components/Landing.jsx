@@ -12,7 +12,7 @@ const Landing = ({allProjects, data, cardURL}) => {
 
   const fakeProjects = fakeData;
   // const landingCards = allProjects.map((project, i)=> <li key={i}><Card/></li>)
-  const landingCards = fakeProjects.map((project, i)=> <FakeCard key={i} data={project} className="section_mockup-card"/>)
+  const landingCards = fakeProjects.map((project, i)=> <FakeCard key={i} data={project}/>)
   
 
   return (
@@ -20,10 +20,6 @@ const Landing = ({allProjects, data, cardURL}) => {
     <Hero text="New Project" link="/createproject"/>
     <section className="section_mockup">
       {landingCards}
-      {/* <FakeCard data={data} cardURL={cardURL} className="section_mockup-card"/>
-      <FakeCard data={data} cardURL={cardURL} className="section_mockup-card"/>
-      <FakeCard data={data} cardURL={cardURL} className="section_mockup-card"/>
-      <FakeCard data={data} cardURL={cardURL} className="section_mockup-card"/> */}
     </section>
     </>
   )

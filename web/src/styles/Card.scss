@@ -9,125 +9,103 @@
     -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(20px);
     background-color: rgba($color: #fff, $alpha: 0.75);
+
+    &__projectTitle {
+      grid-column: 2;
+      position: relative;
+      margin: 15px 10px 1rem 0;
+      text-align: center;
+      text-transform: capitalize;
+    
+      font: var(--font-card-section);
+      // color: var(--dark-blue);
+    }
+
+    &__author {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+
+    &__authorPhoto {
+      width: 75px;
+      height: 75px;
+      border-radius: 50%;
+      background-image: url('../images/avatar.webp');
+      background-position: center;
+      background-size: cover;
+      margin-bottom: 0.8rem;
+    }
+
+    &__job {
+      margin-bottom: 0.2rem;
+      text-align: center;
+      text-transform: capitalize;
+    }
+
+    &__name {
+      font: var(--font-card-title);
+      margin-bottom: .2rem;
+      color: var(--dark-blue);
+      text-align: left;
+      text-transform: capitalize;
+
+      &--author {
+        text-align: center;
+        text-transform: capitalize;
+      }
+    }
+
+    &__project {
+      margin-right: 10px;
+    }
+
+    &__slogan {
+      font: var(--font-card-subtitle);
+      margin-top: -.2rem;
+      margin-bottom: .8rem;
+      color: var(--light-blue);
+      text-align: left;
+      text-transform: capitalize;
+    }
+
+    &__description {
+      font-weight: inherit;
+      text-align: left;
+    }
+
+    &__technicalInfo {
+      display: grid;
+      grid-template-columns: 1fr 2rem 2rem;
+      gap: .5em;
+      margin-block: 1.8rem;
+      text-align: left;
+    }
+
+    &__technologies {
+      font: var(--font-card-tech);
+    }
+
+    /* ICONS */
+
+    .icon {
+      width: 1.6rem;
+      height: 1.6rem;
+      color: transparent;
+      cursor: pointer;
+      border-radius: 50%;
+      box-shadow: 0 0 2px 0 var(--color-greyish-brown-two);
+    }
+
+    .icon__www {
+      background-image: url('../images/icons/globe-solid.svg');
+    }
+
+    .icon__github {
+      background-image: url('../images/icons/github.svg');
+    }
     
   }
   
-  .card .card__projectTitle {
-    grid-column: 2;
-    position: relative;
-    margin: 15px 10px 1rem 0;
-    text-align: center;
-    text-transform: capitalize;
-  
-    font: var(--font-card-section);
-    // color: var(--dark-blue);
-  }
-  
-  // .card .card__projectTitle::before {
-  //   content: '';
-  //   position: absolute;
-  //   top: calc( 50% - 1px );
-  //   bottom: calc( 50% - 1px );
-  //   left: 0;
-  //   right: 0;
-  //   z-index: 0;
-    
-  //   background: linear-gradient(90deg, rgba(160,199,250,1) 0%, transparent, rgba(148,187,233,1) 100%);
-  // }
-  
-  .card .card__projectTitle--text {
-    position: relative;
-    padding-inline: 0.1em;
-    z-index: 1;
-    //background-color: white;
-  }
-  
-  .card .card__author {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: 10px;
-  }
-  
-  .card .card__authorPhoto {
-    width: 75px;
-    height: 75px;
-    border-radius: 50%;
-    background-image: url('../images/avatar.webp');
-    background-position: center;
-    background-size: cover;
-    margin-bottom: 0.8rem;
-  }
-  
-  .card .card__job {
-    margin-bottom: 0.2rem;
-    text-align: center;
-    text-transform: capitalize;
-  }
-  
-  .card .card__name {
-    font: var(--font-card-title);
-    margin-bottom: .2rem;
-    color: var(--dark-blue);
-    text-align: left;
-    text-transform: capitalize;
-  }
-
-  .card .card__name--author {
-    text-align: center;
-    text-transform: capitalize;
-  }
-  
-  .card .card__project {
-    margin-right: 10px;
-  }
-  
-  .card .card__slogan {
-    font: var(--font-card-subtitle);
-    margin-top: -.2rem;
-    margin-bottom: .8rem;
-    color: var(--light-blue);
-    text-align: left;
-    text-transform: capitalize;
-  }
-  
-  .card .card__descriptionTitle {
-    font-weight: inherit;
-    text-align: left;
-  }
-
-  .card .card__description {
-    font-weight: inherit;
-    text-align: left;
-  }
-  
-  .card .card__technicalInfo {
-    display: grid;
-    grid-template-columns: 1fr 2rem 2rem;
-    gap: .5em;
-    margin-block: 1.8rem;
-    text-align: left;
-  }
-  
-  .card .card__technologies {
-    font: var(--font-card-tech);
-  }
-  
-  /* ICONS */
-
-.icon {
-  width: 1.6rem;
-  height: 1.6rem;
-  color: transparent;
-  cursor: pointer;
-  border-radius: 50%;
-  box-shadow: 0 0 2px 0 var(--color-greyish-brown-two);
-}
-
-.icon__www {
-  background-image: url('../images/icons/globe-solid.svg');
-}
-
-.icon__github {
-  background-image: url('../images/icons/github.svg');
-}
+ 
