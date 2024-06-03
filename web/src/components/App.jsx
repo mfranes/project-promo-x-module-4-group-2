@@ -5,7 +5,6 @@ import Header from './Header';
 import Main from './Main';
 import { Route, Routes } from 'react-router';
 import Landing from './Landing';
-import DetailPage from './DetailPage';
 import {useEffect, useState} from 'react';
 // Importamos el servicio del local storage
 import ls from '../services/localStorage';

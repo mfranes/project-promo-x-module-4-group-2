@@ -1,7 +1,6 @@
 import Hero from './Hero';
 import Preview from './Preview';
 import Form from './Form';
-import "../styles/Main.scss";
 
 
 
