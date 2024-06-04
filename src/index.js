@@ -15,8 +15,6 @@ const staticUrl = "./src/public";
 server.use(express.static(staticUrl));
 
 
-//endpoint: get data from api
-
 const fakeData = [
     {
         "name": "Gravity Screen",
@@ -104,13 +102,13 @@ const fakeData = [
       }
 ];
 
+//endpoint: get data from api
 server.get("/getprojects", (req, res)=>{
     
     res.json({ data: fakeData, count: fakeData.length});
 });
 
 //endpoint: post new project
-
 server.post("/newproject", (req, res)=>{
     const newProject = req.body;
     fakeData.push(newProject);
