@@ -114,7 +114,7 @@ server.get("/getprojects", (req, res)=>{
 server.post("/newproject", (req, res)=>{
     const newProject = req.body;
     fakeData.push(newProject);
-    res.json({message: "Project created successfully"});
+    res.json({message: "Project created successfully", data: req.body, array: fakeData});
 });
 
 //endpoint: pagina detalle:

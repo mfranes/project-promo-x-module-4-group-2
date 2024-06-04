@@ -104,7 +104,7 @@ const Form = (props) => {
             </div>
           </div>
           <div className="group_save_reset">
-            <Button data={props.data} postData={postData} addNewProject={props.addNewProject}/>
+            <Button data={props.data} resetData={props.resetData} />
             <button className="btn_rst" onClick={handleReset}><i className="fa-solid fa-trash-can group_save_reset-icon"></i></button>
           </div>
         </fieldset>
