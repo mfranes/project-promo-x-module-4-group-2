@@ -104,13 +104,14 @@ const Form = (props) => {
             </div>
           </div>
           <div className="group_save_reset">
-            <Button data={props.data} resetData={props.resetData} />
+            <Button data={props.data} resetData={props.resetData} setCardURL={setCardURL}/>
             <button className="btn_rst" onClick={handleReset}><i className="fa-solid fa-trash-can group_save_reset-icon"></i></button>
           </div>
         </fieldset>
         <div className="cardURL">
           {cardURL ? <Link to='/projectdetail'>View your Project 
-                  <i className="fa-solid fa-square-arrow-up-right linkProject_icon"></i></Link> : <p className="errorFillForm">Make sure you've filled all the fields</p>}
+                  <i className="fa-solid fa-square-arrow-up-right linkProject_icon"></i></Link> : <p className="errorFillForm"></p>}
+                  {/* Cuando Validemos añadir: Make sure you've filled all the fields */}
         </div>
       </form>
   )

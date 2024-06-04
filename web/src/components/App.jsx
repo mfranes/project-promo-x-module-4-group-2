@@ -38,6 +38,7 @@ function App() {
         .then(response => response.json())
         .then(info => {
             setAllProjects(info.data);
+            resetData();
         })
   }, []);
 

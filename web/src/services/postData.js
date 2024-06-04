@@ -7,8 +7,8 @@ const postData = (data) => {
         })
         .then(response => response.json())
         .then(dataResponse => {
-            console.log(dataResponse);
-            return dataResponse.cardURL;
+            console.log('fetch', dataResponse);
+            return dataResponse;
         })
 }
 
