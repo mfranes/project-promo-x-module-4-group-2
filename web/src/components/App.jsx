@@ -10,6 +10,7 @@ import {useEffect, useState} from 'react';
 import ls from '../services/localStorage';
 import postData from '../services/postData';
 import DetailProject from './DetailProject';
+// import getData from '../services/getData';
 
 function App() {
 
@@ -30,12 +31,15 @@ function App() {
 
   const [allProjects, setAllProjects] = useState([]);
 
-  const addNewProject = ()=> {
-    setAllProjects([...allProjects, data])
-  }
-
- 
- 
+  
+ //fetch data for landing
+  useEffect(()=>{
+    fetch('//localhost:3001/getprojects')
+        .then(response => response.json())
+        .then(info => {
+            setAllProjects(info.data);
+        })
+  }, []);
 
   useEffect(() => {
       // Guardamos data en el local storage
@@ -48,6 +52,8 @@ function App() {
 //     // Guardamos allProjects en el local storage
 //     ls.set('allProjects', allProjects);
 // }, [allProjects]);
+
+
 
   const updateAvatar = (id, avatar) => {
       setData({...data, [id]: avatar});
@@ -79,7 +85,7 @@ function App() {
       <Header/>
       <Routes>
         <Route path='/' element={<Landing allProjects={allProjects} data={data}/>}/>
-        <Route path='/createproject' element={<Main getInput={getInput} updateAvatar={updateAvatar} data={data} addNewProject={addNewProject} resetData={resetData}/>}/>
+        <Route path='/createproject' element={<Main getInput={getInput} updateAvatar={updateAvatar} data={data} resetData={resetData}/>}/>
         <Route path='/projectdetail' element={<DetailProject data={data}/>}/>
       </Routes>
       <Footer/>

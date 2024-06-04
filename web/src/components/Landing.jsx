@@ -5,14 +5,14 @@ import ebook from '../images/ebook-example.jpg';
 import { Link } from "react-router-dom";
 import FakeCard from "./FakeCard";
 import '../styles/Landing.scss';
-import fakeData from "../services/fakeData.json";
+// import fakeData from "../services/fakeData.json";
 
 const Landing = ({allProjects, data, cardURL}) => {
 
 
-  const fakeProjects = fakeData;
+  // const fakeProjects = fakeData;
   // const landingCards = allProjects.map((project, i)=> <li key={i}><Card/></li>)
-  const landingCards = fakeProjects.map((project, i)=> <FakeCard key={i} data={project}/>)
+  const landingCards = allProjects.map((project, i)=> <FakeCard key={i} data={project}/>)
   
 
   return (

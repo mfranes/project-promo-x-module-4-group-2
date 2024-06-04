@@ -49,40 +49,7 @@ const Form = (props) => {
     setCardURL("");
   }
 
-  
 
-  
-
-  const postData = (data) => {
-
-    return fetch('https://dev.adalab.es/api/projectCard', {
-        method: 'POST',
-        headers: {'Content-Type': 'application/json'},
-        body: JSON.stringify(data)
-        })
-        .then(response => response.json())
-        .then(dataResponse => {
-            console.log(dataResponse);
-            if(dataResponse.success){
-                console.log(dataResponse.cardURL)
-                setCardURL(
-                  // <a href={dataResponse.cardURL} target="_blank" className="linkProject">
-                    <Link to='/projectdetail'>View your Project 
-                  <i className="fa-solid fa-square-arrow-up-right linkProject_icon"></i></Link>
-                    
-                  // </a>
-                )
-                // ls.set('data', data);
-                props.addNewProject();
-                // props.resetData();
-                
-             }
-             else {
-                setCardURL(<p className="errorFillForm">Make sure you've filled all the fields</p>)
-             }
-    
-        })
-    }
 
     const handleReset = (ev) =>{
       ev.preventDefault();
@@ -142,7 +109,8 @@ const Form = (props) => {
           </div>
         </fieldset>
         <div className="cardURL">
-          {cardURL}
+          {cardURL ? <Link to='/projectdetail'>View your Project 
+                  <i className="fa-solid fa-square-arrow-up-right linkProject_icon"></i></Link> : <p className="errorFillForm">Make sure you've filled all the fields</p>}
         </div>
       </form>
   )

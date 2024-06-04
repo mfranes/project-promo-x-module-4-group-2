@@ -5,13 +5,13 @@ import Form from './Form';
 
 
 
-const Main = ({getInput, updateAvatar, data, addNewProject, resetData, setData}) => {
+const Main = ({getInput, updateAvatar, data, resetData, setData}) => {
   return (
     <>
     <Hero text="See projects" link="/"/>
     <main className="main">
       <Preview data={data}/>
-      <Form getInput={getInput} updateAvatar={updateAvatar} data={data} addNewProject={addNewProject} resetData={resetData}/>
+      <Form getInput={getInput} updateAvatar={updateAvatar} data={data} resetData={resetData}/>
     </main>
     </>
   )
