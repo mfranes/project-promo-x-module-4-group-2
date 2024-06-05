@@ -13,6 +13,7 @@ author varchar (45) not null,
 job varchar (45) not null,
 image text not null,
 photo text not null
+);
 
 SELECT * from project;
 
