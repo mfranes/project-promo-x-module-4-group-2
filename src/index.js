@@ -1,6 +1,7 @@
 //configuración
 const express = require("express");
 const cors = require("cors");
+const mysql = require('mysql2/promise');
 const server = express();
 server.use(cors());
 server.use(express.json({limit: '25mb'}));
@@ -10,11 +11,18 @@ server.listen(PORT, ()=>{
     console.log(`server is running at http://localhost:${PORT}`)
 });
 
-//rutas endpoints -> API
-const staticUrl = "./src/public";
-server.use(express.static(staticUrl));
+async function connectToDatabase() {
+  const connection = await mysql.createConnection({
+    host: 'sql.freedb.tech',
+    user: 'freedb_admindesquiciada',
+    password: 'jqSjm5XjST$DJyn',
+    database: 'freedb_desarrolladorasDesquiciadas'
+  });
+  await connection.connect();
+  return connection;
+}
 
-
+/*
 const fakeData = [
     {
         "name": "Gravity Screen",
@@ -101,18 +109,31 @@ const fakeData = [
         "photo": "https://cdn.dribbble.com/users/508142/avatars/normal/1cffa29a3f16e934e3b310ce18ad2c6d.jpg?1696372002"
       }
 ];
+*/
 
 //endpoint: get data from api
-server.get("/getprojects", (req, res)=>{
-    
-    res.json({ data: fakeData, count: fakeData.length});
+server.get("/getprojects", async (req, res)=>{
+  const conn = await connectToDatabase();
+  const selectSQL = "SELECT author.name AS autor, author.job, author.photo, project.name, project.slogan, project.technologies, project.repo, project.demo, project.descr, project.image FROM project INNER JOIN author on project.fkAuthor = author.idAuthor;";
+  const [results] = await conn.query(selectSQL);
+  res.json({ data: results});
+  conn.end();
 });
 
 //endpoint: post new project
-server.post("/newproject", (req, res)=>{
-    const newProject = req.body;
-    fakeData.push(newProject);
-    res.json({message: "Project created successfully", url: "http://localhost:3001/#/projectdetail"});
+server.post("/newproject", async (req, res)=>{
+  const data = req.body;
+  console.log(data);
+  const conn = await connectToDatabase();
+  const insertAuthor = 'INSERT INTO author (name, job, photo) values (?, ?, ?);';
+  const [resultAuthor] = await conn.query(insertAuthor, [data.autor, data.job, data.photo]);
+  const insertProject = 'INSERT INTO project (name, slogan, technologies, repo, demo, descr, image, fkAuthor) values (?,?,?,?,?,?,?,?);';
+  const [resultProject] = await conn.query(insertProject, [data.name, data.slogan, data.technologies, data.repo, data.demo, data.desc, data.image, resultAuthor.insertId]);
+  res.json({
+    message: "Project created successfully", 
+    url: `http://localhost:3001/#/projectdetail/${resultProject.insertId}`
+  });
+  conn.end();
 });
 
 //endpoint: pagina detalle:
@@ -125,3 +146,5 @@ server.get("/detailProject", ()=>{
 server.delete("/delete", ()=>{})
 
 //servidores de estáticos
+const staticUrl = "./src/public";
+server.use(express.static(staticUrl));

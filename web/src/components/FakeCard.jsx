@@ -9,7 +9,7 @@ import { Link } from "react-router-dom";
 
 const FakeCard = ({data}) => {
 
-    const {name, slogan, technologies, repo, demo, desc, autor, job, image, photo} = data
+    const {name, slogan, technologies, repo, demo, descr, autor, job, image, photo} = data
 
     // const urldemo = demo.includes('http://' || 'https://') ? demo : `https://${demo}`;
     // const urlrepo = repo.includes('http://' || 'https://') ? repo : `https://${repo}`;
@@ -76,7 +76,7 @@ const FakeCard = ({data}) => {
             <h3 className="card__name">{name || "Elegant Workspace"}</h3>
             <p className="card__slogan">{slogan || "Diseños Exclusivos"}</p>
             {/* <h3 className="card__descriptionTitle">Product Description</h3> */}
-            <p className="card__description">{desc || "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nulla, quos? Itaque, molestias eveniet laudantium adipisci vitae ratione"}</p>
+            <p className="card__description">{descr || "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nulla, quos? Itaque, molestias eveniet laudantium adipisci vitae ratione"}</p>
 
             <div className="card__technicalInfo">
               <p className="card__technologies">{technologies || "React JS - HTML - CSS"}</p>
