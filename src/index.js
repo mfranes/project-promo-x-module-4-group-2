@@ -156,3 +156,7 @@ server.delete("/delete", ()=>{})
 //servidores de estáticos
 const staticUrl = "./src/public";
 server.use(express.static(staticUrl));
+
+const statiStyle = "./src/css";
+server.use(express.static(statiStyle));
+

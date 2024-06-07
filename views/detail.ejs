@@ -3,27 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Project Sphere</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link rel="stylesheet" href="/main.css">
+    <link href="https://fonts.googleapis.com/css2?family=Catamaran:wght@500&family=Montserrat:wght@300;400;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Geologica:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    
 </head>
 <body>
     <section class="preview">
         <div class="profile">
-            <div
+           <!--  <div
               class="projectImage"
-              style="background-image: <%= project.image %>"
-            ></div>
-          </div>
+              style="background-image:url(<%= project.image %>)"
+            ></div>-->
+          
+            
+             
+              
+          <img class="projectImage" src="<%= project.image %>" alt=""></div>
+         
           <article class="card">
             <h2 class="card__projectTitle"><span class="card__projectTitle--text"></span></h2>
   
             <div class="card__author">
               
               <div class="profile">
-                <div
-                  class="card__authorPhoto"
-                  style="background-image: <%= project.photo %>"
-                ></div>
-              </div>
+                 
+            
+                  
+                <img class="card__authorPhoto" src="<%= project.photo %>" alt=""></div>
+              
               <p class="card__job">
                 <%= project.job %>
               </p>
@@ -33,7 +46,7 @@
             <div class="card__project">            
               <h3 class="card__name"><%= project.name %></h3>
               <p class="card__slogan"><%= project.slogan %></p>
-              {/* <h3 class="card__descriptionTitle">Product Description</h3> */}
+              
               <p class="card__description"><%= project.descr %></p>
   
               <div class="card__technicalInfo">
