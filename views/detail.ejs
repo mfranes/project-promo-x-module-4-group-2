@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <section class="preview">
+        <div class="profile">
+            <div
+              class="projectImage"
+              style="background-image: <%= project.image %>"
+            ></div>
+          </div>
+          <article class="card">
+            <h2 class="card__projectTitle"><span class="card__projectTitle--text"></span></h2>
+  
+            <div class="card__author">
+              
+              <div class="profile">
+                <div
+                  class="card__authorPhoto"
+                  style="background-image: <%= project.photo %>"
+                ></div>
+              </div>
+              <p class="card__job">
+                <%= project.job %>
+              </p>
+              <h3 class="card__name--author"><%= project.author %></h3>
+            </div>
+        
+            <div class="card__project">            
+              <h3 class="card__name"><%= project.name %></h3>
+              <p class="card__slogan"><%= project.slogan %></p>
+              {/* <h3 class="card__descriptionTitle">Product Description</h3> */}
+              <p class="card__description"><%= project.descr %></p>
+  
+              <div class="card__technicalInfo">
+                <p class="card__technologies"><%= project.technologies %></p>
+            
+                <a class="icon icon__www" href="<%= project.demo %>" title="Click here to see the project online" target="_blank">
+                  Web link
+                </a>
+                <a class="icon icon__github" href="<%= project.repo %>" title="Click here to see the project code" target="_blank">
+                  GitHub link
+                </a>
+              </div>
+            </div>
+      </article>
+    </section>
+</body>
+</html>

@@ -5,6 +5,7 @@ const mysql = require('mysql2/promise');
 const server = express();
 server.use(cors());
 server.use(express.json({limit: '25mb'}));
+server.set("view engine","ejs")
 
 const PORT = 3001;
 server.listen(PORT, ()=>{
@@ -137,9 +138,16 @@ server.post("/newproject", async (req, res)=>{
 });
 
 //endpoint: pagina detalle:
-server.get("/detailProject", ()=>{
- //aquí se puede crear otro array fake, pero es mejor dejarlo sin rellenar, es un pollo
-})
+server.get("/project/:idProject", async (req,res)=>{
+  const conn = await connectToDatabase();
+  const {idProject}= req.params;
+  const selectSQL = "SELECT * FROM project INNER JOIN author on project.fkAuthor = author.idAuthor where idProject=?;";
+  const [results]= await conn.query(selectSQL,[idProject]);
+  res.render("detail",{project:results[0]});
+  conn.end();
+
+ 
+});
 
 //endpoint: delete
 
