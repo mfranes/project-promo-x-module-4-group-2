@@ -60,7 +60,7 @@ const FakeCard = ({data, deleteItem}) => {
 
   return (
     <section className="cardWrapper">
-    <button className="cardWrapper__deletebutton" onClick={() => deleteItem(idProject)}>x</button>
+    <button className="cardWrapper__deletebutton" onClick={() => deleteItem(idProject)}><i className="fa-solid fa-trash-can"></i></button>
     <div onClick={showPopup} className="fakecard">
       {visible && <Popup handleClose={closePopup}/>}
       <article className="card">
