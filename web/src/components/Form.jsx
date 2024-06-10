@@ -33,8 +33,6 @@ const Form = (props) => {
     if (id === 'repo' || id === 'demo') {
       if (!urlPattern.test(inputValue)) {
         setErrorMsg({...errorMsg, [id]: 'Please enter a valid URL'});
-      } else {
-        setErrorMsg({...errorMsg, [id]: ''})
       }
     }
   };
