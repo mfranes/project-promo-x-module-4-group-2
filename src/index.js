@@ -116,7 +116,7 @@ const fakeData = [
 //endpoint: get data from api
 server.get("/getprojects", async (req, res)=>{
   const conn = await connectToDatabase();
-  const selectSQL = "SELECT author.name AS autor, author.job, author.photo, project.name, project.slogan, project.technologies, project.repo, project.demo, project.descr, project.image FROM project INNER JOIN author on project.fkAuthor = author.idAuthor;";
+  const selectSQL = "SELECT author.name AS autor, author.job, author.photo, project.name, project.slogan, project.technologies, project.repo, project.demo, project.descr, project.image, project.idProject FROM project INNER JOIN author on project.fkAuthor = author.idAuthor;";
   const [results] = await conn.query(selectSQL);
   res.json({ data: results});
   conn.end();
@@ -133,7 +133,7 @@ server.post("/newproject", async (req, res)=>{
   const [resultProject] = await conn.query(insertProject, [data.name, data.slogan, data.technologies, data.repo, data.demo, data.desc, data.image, resultAuthor.insertId]);
   res.json({
     message: "Project created successfully", 
-    url: `http://localhost:3001/#/projectdetail/${resultProject.insertId}`
+    url: `http://localhost:3001/project/${resultProject.insertId}`
   });
   conn.end();
 });
@@ -146,8 +146,6 @@ server.get("/project/:idProject", async (req,res)=>{
   const [results]= await conn.query(selectSQL,[idProject]);
   res.render("detail",{project:results[0]});
   conn.end();
-
- 
 });
 
 //endpoint: delete

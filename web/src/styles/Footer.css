@@ -1,0 +1,10 @@
+.footer {
+  display: flex;
+  justify-content: center;
+  padding: 19px;
+  background-color: white;
+}
+
+.footer-dark {
+  background-color: var(--darkmode-background);
+}/*# sourceMappingURL=Footer.css.map */

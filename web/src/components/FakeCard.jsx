@@ -9,7 +9,7 @@ import { Link } from "react-router-dom";
 
 const FakeCard = ({data}) => {
 
-    const {name, slogan, technologies, repo, demo, descr, autor, job, image, photo} = data
+    const {idProject, name, slogan, technologies, repo, demo, descr, autor, job, image, photo} = data
 
     // const urldemo = demo.includes('http://' || 'https://') ? demo : `https://${demo}`;
     // const urlrepo = repo.includes('http://' || 'https://') ? repo : `https://${repo}`;
@@ -41,8 +41,8 @@ const FakeCard = ({data}) => {
                 <img src={Git} alt="" />
               </a>
             </div>
-
-            <Link className="popup__button-see" to='/projectdetail'>See project</Link>
+            <a className="popup__button-see" href={`http://localhost:3001/project/${idProject}`}>See project</a>
+            {/* <Link className="popup__button-see" to='/projectdetail'>See project</Link> */}
           </div>
         </div>
       );

@@ -109,8 +109,8 @@ const Form = (props) => {
           </div>
         </fieldset>
         <div className="cardURL">
-          {cardURL ? <Link to='/projectdetail'>View your Project 
-                  <i className="fa-solid fa-square-arrow-up-right linkProject_icon"></i></Link> : <p className="errorFillForm"></p>}
+          {/* {cardURL ? <Link to='/projectdetail'>View your Project <i className="fa-solid fa-square-arrow-up-right linkProject_icon"></i></Link> : <p className="errorFillForm"></p>} */}
+          {cardURL ? <a href={cardURL}>View your Project <i className="fa-solid fa-square-arrow-up-right linkProject_icon"></i></a> : <p className="errorFillForm"></p>}
                   {/* Cuando Validemos añadir: Make sure you've filled all the fields */}
         </div>
       </form>
