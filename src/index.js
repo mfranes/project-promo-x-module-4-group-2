@@ -150,7 +150,25 @@ server.get("/project/:idProject", async (req,res)=>{
 
 //endpoint: delete
 
-server.delete("/delete", ()=>{})
+server.delete("/delete/:idProject", async (req, res)=>{
+  const conn = await connectToDatabase();
+  const { idProject } = req.params;
+  const sql = 'DELETE FROM project WHERE idProject = ?;';
+  console.log(idProject, req.params);
+  
+  // await conn.query(sql, [idProject], (err, result) => {
+  //   if (err) {
+  //     res.status(500).send('Error deleting item');
+  //   } else {
+  //     res.send('Item successfully deleted');
+  //   }
+  // });
+
+  const [results] = await conn.query(sql, [idProject]);
+  console.log(res.success);
+
+  await conn.end();
+})
 
 //servidores de estáticos
 const staticUrl = "./src/public";

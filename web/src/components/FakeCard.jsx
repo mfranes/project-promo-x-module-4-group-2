@@ -7,7 +7,7 @@ import Web from '../images/icons/globe-solid.svg'
 import Git from '../images/icons/github.svg'
 import { Link } from "react-router-dom";
 
-const FakeCard = ({data}) => {
+const FakeCard = ({data, deleteItem}) => {
 
     const {idProject, name, slogan, technologies, repo, demo, descr, autor, job, image, photo} = data
 
@@ -59,6 +59,8 @@ const FakeCard = ({data}) => {
     }
 
   return (
+    <section className="cardWrapper">
+    <button className="cardWrapper__deletebutton" onClick={() => deleteItem(idProject)}>x</button>
     <div onClick={showPopup} className="fakecard">
       {visible && <Popup handleClose={closePopup}/>}
       <article className="card">
@@ -75,7 +77,7 @@ const FakeCard = ({data}) => {
           <div className="card__project">            
             <h3 className="card__name">{name || "Elegant Workspace"}</h3>
             <p className="card__slogan">{slogan || "Diseños Exclusivos"}</p>
-            {/* <h3 className="card__descriptionTitle">Product Description</h3> */}
+          
             <p className="card__description">{descr || "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nulla, quos? Itaque, molestias eveniet laudantium adipisci vitae ratione"}</p>
 
             <div className="card__technicalInfo">
@@ -85,6 +87,7 @@ const FakeCard = ({data}) => {
           </div>
     </article>
     </div>
+    </section>
   )
 }
 
