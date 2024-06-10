@@ -3,6 +3,7 @@ const express = require("express");
 const cors = require("cors");
 const mysql = require('mysql2/promise');
 const server = express();
+require ("dotenv").config();
 server.use(cors());
 server.use(express.json({limit: '25mb'}));
 server.set("view engine","ejs")
@@ -14,10 +15,10 @@ server.listen(PORT, ()=>{
 
 async function connectToDatabase() {
   const connection = await mysql.createConnection({
-    host: 'sql.freedb.tech',
-    user: 'freedb_admindesquiciada',
-    password: 'jqSjm5XjST$DJyn',
-    database: 'freedb_desarrolladorasDesquiciadas'
+    host: process.env.DB_HOST,
+    user: process.env.DB_USER,
+    password: process.env.DB_PASS,
+    database: process.env.DB_NAME
   });
   await connection.connect();
   return connection;
