@@ -156,8 +156,6 @@
   backdrop-filter: blur(20px);
   background-color: rgba(248, 248, 248, 0.75);
   max-width: 730px;
-  margin-bottom: 2rem;
-  transform: translateY(-4px);
 }
 .card__projectTitle {
   grid-column: 2;

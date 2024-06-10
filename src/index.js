@@ -159,3 +159,6 @@ server.use(express.static(staticUrl));
 const statiStyle = "./src/css";
 server.use(express.static(statiStyle));
 
+const staticImages = "./src/public/assets";
+server.use(express.static(staticImages));
+
