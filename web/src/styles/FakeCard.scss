@@ -1,6 +1,7 @@
   .cardWrapper{
     position: relative;
     
+    
     &__deletebutton{
       border: none;
       background-color: transparent;
@@ -19,7 +20,6 @@
   .fakecard{
     cursor: pointer;
     }
-
     //pop-up styles
   .graphpop {
     width: 100vw;
