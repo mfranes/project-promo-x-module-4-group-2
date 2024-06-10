@@ -34,7 +34,7 @@ const Form = (props) => {
       if (!urlPattern.test(inputValue)) {
         setErrorMsg({...errorMsg, [id]: 'Please enter a valid URL'});
       } else {
-        setErrorMsg('');
+        setErrorMsg({...errorMsg, [id]: ''})
       }
     }
   };
@@ -104,7 +104,7 @@ const Form = (props) => {
             </div>
           </div>
           <div className="group_save_reset">
-            <Button data={props.data} resetData={props.resetData} setCardURL={setCardURL}/>
+            <Button data={props.data} resetData={props.resetData} setCardURL={setCardURL} errorMsg={errorMsg}/>
             <button className="btn_rst" onClick={handleReset}><i className="fa-solid fa-trash-can group_save_reset-icon"></i></button>
           </div>
         </fieldset>
