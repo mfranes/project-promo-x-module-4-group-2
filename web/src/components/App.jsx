@@ -11,6 +11,7 @@ import ls from '../services/localStorage';
 import postData from '../services/postData';
 import DetailProject from './DetailProject';
 // import getData from '../services/getData';
+//basta yaa
 
 function App() {
 
