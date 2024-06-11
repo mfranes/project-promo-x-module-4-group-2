@@ -1,25 +1,26 @@
   .cardWrapper{
     position: relative;
     
+    
     &__deletebutton{
       border: none;
       background-color: transparent;
       color: var(--light-blue);
-      font-size: 1.5rem;
+      font-size: 1rem;
       position: absolute;
-      right: 15px;
-      top: 5px;
+      left: 15px;
+      bottom: 10px;
       z-index: 1000;
       &:hover{
         color: var(--dark-blue);
         cursor: pointer;
       }
+      
   } 
   
   .fakecard{
     cursor: pointer;
     }
-
     //pop-up styles
   .graphpop {
     width: 100vw;

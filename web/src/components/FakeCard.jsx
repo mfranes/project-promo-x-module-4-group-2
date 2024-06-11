@@ -60,12 +60,10 @@ const FakeCard = ({data, deleteItem}) => {
 
   return (
     <section className="cardWrapper">
-    <button className="cardWrapper__deletebutton" onClick={() => deleteItem(idProject)}>x</button>
+    <button className="cardWrapper__deletebutton" onClick={() => deleteItem(idProject)}><i className="fa-solid fa-trash-can"></i></button>
     <div onClick={showPopup} className="fakecard">
       {visible && <Popup handleClose={closePopup}/>}
       <article className="card">
-          <h2 className="card__projectTitle"><span className="card__projectTitle--text"></span></h2>
-
           <div className="card__author">
             <Profile scssClass="card__authorPhoto" avatar={photo} defaultImg={avatar}/>
             <p className="card__job">

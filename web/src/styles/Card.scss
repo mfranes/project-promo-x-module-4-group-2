@@ -1,9 +1,11 @@
 .card {
     display: grid;
     grid-template-columns: 40% 60%;
+    height: 276px;
   
     color: var(--color-black);
     font: var(--font-card-text);
+    padding-top: 3rem;
   
     border-radius: 20px;
     -webkit-backdrop-filter: blur(10px);
