@@ -2,30 +2,37 @@ import React, { useState } from 'react'
 
 function AlertWindow() {
 
-    const [modal, setModal] = useState(false);
-
-    const toggleModal = () => {
-        setModal(!modal);
-    };    
-
-    if(modal) {
-        document.body.classList.add('active-modal')
-    } else {
-        document.body.classList.remove('active-modal')
-    };
+   //modal delete
+   const [modal, setModal] = useState(false);
+   const toggleModal = () => {
+       setModal(!modal);
+   };    
+   if(modal) {
+       document.body.classList.add('active-modal')
+   } else {
+       document.body.classList.remove('active-modal')
+   }
 
   return (
     <>
-       <div className='modal'>
+      <button className="cardWrapper__deletebutton" onClick={toggleModal}>
+        <i className="fa-solid fa-trash-can"></i>
+      </button>
+
+      {modal && (
+        <div className='modal'>
         <div className='overlay' onClick={toggleModal}>
             <div className='modal-content'>
-                <h3>Wait!</h3>
-                <p>This will permanently delete the project from the database - are you sure you want to do that?</p>
-                <button onClick={() => deleteItem(idProject)}>Yes. Delete forever.</button>
-                <button className='close-modal' onClick={toggleModal}>Bad idea, let's not delete.</button>
+                <h3 className="alert-title">Wait!</h3>
+                <p>This will permanently delete the project <span className="project-title-name">{name}</span> by <span className="project-title-name">{autor}</span>  from the database - are you sure you want to do that? <span className="dont-delete">PLEASE DON'T DELETE</span></p>
+                <div className="buttons">
+                  <button className='btn-modal' onClick={() => deleteItem(idProject)}>Yes. Delete forever.</button>
+                  <button className='btn-modal' onClick={toggleModal}>Bad idea, let's not delete.</button>
+                </div>
             </div>
         </div>
        </div>
+      )}
     </>
   )
 }

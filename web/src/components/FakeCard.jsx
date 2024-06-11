@@ -61,15 +61,16 @@ const FakeCard = ({data, deleteItem}) => {
     }
 
     //modal delete
-    const [modal, setModal] = useState(false);
-    const toggleModal = () => {
-        setModal(!modal);
-    };    
-    if(modal) {
-        document.body.classList.add('active-modal')
-    } else {
-        document.body.classList.remove('active-modal')
-    }
+   const [modal, setModal] = useState(false);
+   const toggleModal = () => {
+       setModal(!modal);
+   };    
+   if(modal) {
+       document.body.classList.add('active-modal')
+   } else {
+       document.body.classList.remove('active-modal')
+   }
+    
 
   return (
     <section className="cardWrapper">
@@ -91,7 +92,6 @@ const FakeCard = ({data, deleteItem}) => {
         </div>
        </div>
       )}
-    {/* <button className="cardWrapper__deletebutton" onClick={() => deleteItem(idProject)}><i className="fa-solid fa-trash-can"></i></button> */}
     <div onClick={showPopup} className="fakecard">
       {visible && <Popup handleClose={closePopup}/>}
       <article className="card">
