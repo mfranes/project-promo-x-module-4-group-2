@@ -11,6 +11,7 @@ body.active-modal {
     right: 0;
     bottom: 0;
     position: fixed;
+    z-index: 2000;
 }
 
 .overlay {
@@ -22,13 +23,57 @@ body.active-modal {
     left: 50%;
     transform: translate(-50%, -50%);
     line-height: 1.4;
-    background: #f1f1f1;
+    background-color: #f1f1f1;
     padding: 14px 28px;
-    border-radius: 3px;
+    border-radius: 20px;
     max-width: 600px;
     min-width: 300px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.alert-title{
+    font: var(--font-title-big);
+    color: var(--dark-blue);
+    margin-bottom: 15px;
+}
+
+.project-title-name{
+    color: var(--lilac);
+    font-weight: bold;
+}
+
+.dont-delete{
+    color: rgb(222, 0, 0);
+    font-weight: bold;
+}
+
+.buttons{
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
 }
 
 .btn-modal{
+    border: none;
+    width: fit-content;
+    height: 30px;
+    padding: 0 18px;
+    color: white;
+    font: var(--font-text-normal);
+    text-transform: none;
+    text-decoration: none;
+    text-align: center;
+  
+    border-radius: 40px;
+    background-color: var(--dark-blue);
+    opacity: 0.75;
+  
+    cursor: pointer;
 
+    &:hover{
+        opacity: 1;
+    }
 }
