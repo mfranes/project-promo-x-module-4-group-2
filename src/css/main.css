@@ -87,7 +87,7 @@
 }
 
 .container {
-  background-image: url("/gradient_4-CEwsP3CZ.png");
+  background-image: url("/gradient_4.png");
   background-attachment: fixed;
   background-size: cover;
   background-repeat: no-repeat;
@@ -257,4 +257,10 @@
   background-color: var(--dark-blue);
   color: white;
   border: solid 1px transparent;
+}
+
+.delete-project{
+  margin-bottom: 10px;
+  margin-right: 10px;
+  align-self: flex-end;
 }
