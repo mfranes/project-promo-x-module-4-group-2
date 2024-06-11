@@ -169,6 +169,7 @@ server.delete("/delete/:idProject", async (req, res)=>{
   }
 
   await conn.end();
+  
 })
 
 //servidores de estáticos
