@@ -30,8 +30,8 @@ function App() {
   });
 
   const [data, setData] = useState(localStorageData);
-
   const [allProjects, setAllProjects] = useState([]);
+  const [state, setState] = useState(false);
 
   
  //fetch data for landing
@@ -43,20 +43,12 @@ function App() {
             console.log(info.data);
             resetData();
         })
-  }, []);
+  }, [state]);
 
   useEffect(() => {
       // Guardamos data en el local storage
       ls.set('data', data);
   }, [data]);
-
-
-//FIX THIS!!!!!!!!!!
-//   useEffect(() => {
-//     // Guardamos allProjects en el local storage
-//     ls.set('allProjects', allProjects);
-// }, [allProjects]);
-
 
   const updateAvatar = (id, avatar) => {
       setData({...data, [id]: avatar});
@@ -88,7 +80,8 @@ function App() {
     });
   
     if (response.ok) {
-      setAllProjects(allProjects.filter(project => project.idProject !== id));
+      // setAllProjects(allProjects.filter(project => project.idProject !== id));
+      setState((prevState) => !prevState)
     } else {
       alert('Error deleting item');
     }

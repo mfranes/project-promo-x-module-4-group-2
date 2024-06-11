@@ -10,7 +10,7 @@ const Button = ({data, setCardURL, errorMsg}) => {
 
         // Valida datos completos
         for (let key in data) {
-            if ((key !== 'image' && key !== 'photo') && data[key] === '') {  // Si el campo esta vacio (sin las fotos)
+            if ((key !== 'idProject') && data[key] === '') {  // Si el campo esta vacio (sin las fotos)
                 console.log(`campo vacio -> ${key}`);
                 isValidated = false;
                 break; // Deja de iterar porque encontró un error

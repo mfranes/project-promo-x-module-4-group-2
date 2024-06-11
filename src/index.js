@@ -156,25 +156,20 @@ server.get("/project/:idProject", async (req,res)=>{
 });
 
 //endpoint: delete
-
 server.delete("/delete/:idProject", async (req, res)=>{
   const conn = await connectToDatabase();
   const { idProject } = req.params;
-  const sql = 'DELETE FROM project WHERE idProject = ?;';
-  console.log(idProject, req.params);
-  
-  // await conn.query(sql, [idProject], (err, result) => {
-  //   if (err) {
-  //     res.status(500).send('Error deleting item');
-  //   } else {
-  //     res.send('Item successfully deleted');
-  //   }
-  // });
-
+  const sql = 'DELETE project, author FROM project JOIN author ON project.fkAuthor = author.idAuthor WHERE idProject = ?;';
+ 
   const [results] = await conn.query(sql, [idProject]);
-  console.log(res.success);
+  if (results.affectedRows > 0) {
+    res.status(200).json({ success: true });
+  } else {
+    res.status(200).json({ success: false, message: 'No existe el id ' });
+  }
 
   await conn.end();
+  
 })
 
 //servidores de estáticos
