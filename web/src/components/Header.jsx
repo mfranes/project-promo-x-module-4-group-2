@@ -1,7 +1,6 @@
-import logoPS from '../images/logo_simple.svg';
 import laptop from '../images/laptop-code-solid.svg';
 import "../styles/Header.scss"
-import { useLocation } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 const Header = () => {
 
@@ -13,10 +12,13 @@ const Header = () => {
         <img className="header__companyLogo" src={laptop} alt="Logo D.D."/>
         <h1 className="header__title">Desarrolladoras Desquiciadas</h1>
       </a>
-      <div className='header__dayNightMode'>
+      {/* <div className='header__dayNightMode'>
         <i className="fa-solid fa-sun"></i>
         <i className="fa-solid fa-moon"></i>
-      </div>
+      </div> */}
+      <nav><ul><Link className="header__ul" to="/signup">Sign up</Link>
+      <li>Login</li>
+      <li>User</li></ul></nav>
     </header>
   )
 }
