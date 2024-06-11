@@ -85,8 +85,9 @@
     font-size: 14px;
   }
 }
-.preview {
-  background-image: url("/gradient_4.png");
+
+.container {
+  background-image: url("/gradient_4-CEwsP3CZ.png");
   background-attachment: fixed;
   background-size: cover;
   background-repeat: no-repeat;
