@@ -1,11 +1,13 @@
 import "../styles/FakeCard.scss";
 import "../styles/Card.scss";
+import "../styles/AlertWindow.scss";
 import Profile from "./Profile";
 import avatar from'../images/avatar.webp';
 import { useState, useRef } from "react";
 import Web from '../images/icons/globe-solid.svg'
 import Git from '../images/icons/github.svg'
 import { Link } from "react-router-dom";
+
 
 const FakeCard = ({data, deleteItem}) => {
 
@@ -58,9 +60,36 @@ const FakeCard = ({data, deleteItem}) => {
       setVisible(false)
     }
 
+    //modal delete
+    const [modal, setModal] = useState(false);
+    const toggleModal = () => {
+        setModal(!modal);
+    };    
+    if(modal) {
+        document.body.classList.add('active-modal')
+    } else {
+        document.body.classList.remove('active-modal')
+    }
+
   return (
     <section className="cardWrapper">
-    <button className="cardWrapper__deletebutton" onClick={() => deleteItem(idProject)}><i className="fa-solid fa-trash-can"></i></button>
+      <button className="cardWrapper__deletebutton" onClick={toggleModal}>
+        <i className="fa-solid fa-trash-can"></i>
+      </button>
+
+      {modal && (
+        <div className='modal'>
+        <div className='overlay' onClick={toggleModal}>
+            <div className='modal-content'>
+                <h3>Wait!</h3>
+                <p>This will permanently delete the project from the database - are you sure you want to do that?</p>
+                <button className='btn-modal' onClick={() => deleteItem(idProject)}>Yes. Delete forever.</button>
+                <button className='btn-modal' onClick={toggleModal}>Bad idea, let's not delete.</button>
+            </div>
+        </div>
+       </div>
+      )}
+    {/* <button className="cardWrapper__deletebutton" onClick={() => deleteItem(idProject)}><i className="fa-solid fa-trash-can"></i></button> */}
     <div onClick={showPopup} className="fakecard">
       {visible && <Popup handleClose={closePopup}/>}
       <article className="card">
