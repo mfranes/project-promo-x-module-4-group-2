@@ -124,18 +124,25 @@ server.get("/getprojects", async (req, res)=>{
 
 //endpoint: post new project
 server.post("/newproject", async (req, res)=>{
-  const data = req.body;
-  console.log(data);
-  const conn = await connectToDatabase();
-  const insertAuthor = 'INSERT INTO author (name, job, photo) values (?, ?, ?);';
-  const [resultAuthor] = await conn.query(insertAuthor, [data.autor, data.job, data.photo]);
-  const insertProject = 'INSERT INTO project (name, slogan, technologies, repo, demo, descr, image, fkAuthor) values (?,?,?,?,?,?,?,?);';
-  const [resultProject] = await conn.query(insertProject, [data.name, data.slogan, data.technologies, data.repo, data.demo, data.desc, data.image, resultAuthor.insertId]);
-  res.json({
-    message: "Project created successfully", 
-    url: `http://localhost:3001/project/${resultProject.insertId}`
-  });
-  conn.end();
+  try {
+    const data = req.body;
+    console.log(data);
+    const conn = await connectToDatabase();
+    const insertAuthor = 'INSERT INTO author (name, job, photo) values (?, ?, ?);';
+    const [resultAuthor] = await conn.query(insertAuthor, [data.autor, data.job, data.photo]);
+    const insertProject = 'INSERT INTO project (name, slogan, technologies, repo, demo, descr, image, fkAuthor) values (?,?,?,?,?,?,?,?);';
+    const [resultProject] = await conn.query(insertProject, [data.name, data.slogan, data.technologies, data.repo, data.demo, data.desc, data.image, resultAuthor.insertId]);
+    res.json({
+      message: "Project created successfully", 
+      url: `http://localhost:3001/project/${resultProject.insertId}`
+    });
+    conn.end();
+  } catch (error){
+    console.log(error);
+    res.status(400).json({
+      message: "Project not created", 
+    });
+  }
 });
 
 //endpoint: pagina detalle:
