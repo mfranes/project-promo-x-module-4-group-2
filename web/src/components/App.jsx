@@ -41,7 +41,6 @@ function App() {
         .then(info => {
             setAllProjects(info.data);
             console.log(info.data);
-            resetData();
         })
   }, [state]);
 

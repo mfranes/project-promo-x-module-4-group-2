@@ -1,43 +1,11 @@
 import '../styles/Button.scss';
-import postData from '../services/postData';
 import PropTypes from 'prop-types';
 
-const Button = ({data, setCardURL, errorMsg}) => {
-
-    // funcion que revisa si hay errores en algun campo del form
-    const isDataValidated = (data, errors) => {
-        let isValidated = true;
-
-        // Valida datos completos
-        for (let key in data) {
-            if ((key !== 'idProject') && data[key] === '') {  // Si el campo esta vacio (sin las fotos)
-                console.log(`campo vacio -> ${key}`);
-                isValidated = false;
-                break; // Deja de iterar porque encontró un error
-            }
-        }
-
-        for (let key in errors) {
-            if (errors[key]) {  // Si el id del campo tiene valor, o sea un error
-                console.log(`error validacion -> ${key} - ${errors[key]}`);
-                isValidated = false;
-                break; // Deja de iterar porque encontró un error
-            }
-        }
-
-        return isValidated; // Retorna si hay errores o no
-    }
+const Button = ({sendData}) => {
 
     const handleClick = (ev) => {
         ev.preventDefault();
-        
-
-        if (isDataValidated(data, errorMsg)) {
-            postData(data).then((response) => {
-                setCardURL(response.url)
-                console.log(response);
-            });
-        }
+        sendData();
     }
 
     return (

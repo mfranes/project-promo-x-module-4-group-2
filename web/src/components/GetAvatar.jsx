@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import '../styles/GetAvatar.scss';
 
-function GetAvatar({updateAvatar, text='', id}) {
+function GetAvatar({updateAvatar, text='', id, errormsg}) {
   // creamos una propiedad de la clase que es la que vamos a usar en varios métodos para cargar la imagen
   // esto es un manejador de ficheros
   const fr = new FileReader();
@@ -12,6 +12,16 @@ function GetAvatar({updateAvatar, text='', id}) {
   //  myFileField = document.querySelecto('input')
 
   const uploadImage = (ev) => {
+    const file = ev.target.files[0];
+    if(file){
+      const fileSizeInKB = file.size / 1024;
+      if(fileSizeInKB > 50){
+        errormsg(`${id} is over 50KB and might get cutted off.`);
+      }else{
+        errormsg('');
+      }
+    }
+
     // cuando pulsamos en la label o en <input type="file" />:
     // 1º se abre la ventana de nuestro ordenador para elegir un fichero
     // 2º cuando la usuaria elije un fichero se ejecuta este método manejador de eventos
