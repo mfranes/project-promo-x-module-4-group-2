@@ -19,6 +19,7 @@ function App() {
       name: '',
       slogan: '',
       technologies: '',
+      idProject: '',
       repo: '',
       demo: '',
       desc: '',
@@ -57,7 +58,6 @@ function App() {
 // }, [allProjects]);
 
 
-
   const updateAvatar = (id, avatar) => {
       setData({...data, [id]: avatar});
   };
@@ -69,6 +69,7 @@ function App() {
   function resetData(){
     setData({
       name: '',
+      idProject: '',
       slogan: '',
       technologies: '',
       repo: '',
@@ -81,13 +82,25 @@ function App() {
   });
   }
 
+  const deleteItem = async (id) => {
+    const response = await fetch(`http://localhost:3001/delete/${id}`, {
+      method: 'DELETE',
+    });
   
+    if (response.ok) {
+      setAllProjects(allProjects.filter(project => project.idProject !== id));
+    } else {
+      alert('Error deleting item');
+    }
+  };
+
+
 
   return (
     <div className="container container.dark">
       <Header/>
       <Routes>
-        <Route path='/' element={<Landing allProjects={allProjects} data={data}/>}/>
+        <Route path='/' element={<Landing allProjects={allProjects} data={data} deleteItem={deleteItem}/>}/>
         <Route path='/createproject' element={<Main getInput={getInput} updateAvatar={updateAvatar} data={data} resetData={resetData}/>}/>
         <Route path='/projectdetail' element={<DetailProject data={data}/>}/>
       </Routes>

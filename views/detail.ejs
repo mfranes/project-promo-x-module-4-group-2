@@ -6,7 +6,7 @@
     <title>Project Sphere</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
+    <script src="https://kit.fontawesome.com/f67677b7d2.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="/main.css">
     <link href="https://fonts.googleapis.com/css2?family=Catamaran:wght@500&family=Montserrat:wght@300;400;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Geologica:wght@100..900&display=swap" rel="stylesheet">
@@ -15,59 +15,71 @@
 </head>
 <body>
 
-  <section className="hero">
+
+  <section class="hero">
     <img src='/logo_simple.svg' alt="logo PS" class="hero__logo"/>
     <p class="hero__text">Get inspired and share your projects</p>
     <a class="button--link" href='http://localhost:3001/'>Go back</a>
   </section>
 
-    <section class="preview">
+  <section class="preview">
         <div class="profile">
-           <!--  <div
-              class="projectImage"
-              style="background-image:url(<%= project.image %>)"
-            ></div>-->
-          
-            
-             
-              
-          <img class="projectImage" src="<%= project.image %>" alt=""></div>
-         
-          <article class="card">
-            <h2 class="card__projectTitle"><span class="card__projectTitle--text"></span></h2>
-  
-            <div class="card__author">
-              
-              <div class="profile">
-                 
-            
-                  
-                <img class="card__authorPhoto" src="<%= project.photo %>" alt=""></div>
-              
-              <p class="card__job">
-                <%= project.job %>
+          <img class="projectImage" src="<%= project.image %>" alt="">
+        </div>
+        <article class="card">
+          <h2 class="card__projectTitle">
+            <span class="card__projectTitle--text"></span>
+          </h2>
+          <div class="card__author">
+            <div class="profile">
+              <img 
+                class="card__authorPhoto" 
+                src="<%= project.photo %>" alt="">
+            </div>
+            <p class="card__job">
+              <%= project.job %>
+            </p>
+            <h3 class="card__name--author">
+              <%= project.author %>
+            </h3>
+          </div>        
+          <div class="card__project">            
+            <h3 class="card__name">
+              <%= project.name %>
+            </h3>
+            <p class="card__slogan">
+              <%= project.slogan %>
+            </p>
+            <p class="card__description">
+              <%= project.descr %>
+            </p>
+            <div class="card__technicalInfo">
+              <p class="card__technologies">
+                <%= project.technologies %>
               </p>
-              <h3 class="card__name--author"><%= project.author %></h3>
+              <a 
+                class="icon icon__www"
+                href="<%= project.demo %>" 
+                title="Click here to see the project online" 
+                target="_blank">
+                Web link
+              </a>
+              <a 
+                class="icon icon__github" 
+                href="<%= project.repo %>" 
+                title="Click here to see the project code" 
+                target="_blank">
+                GitHub link
+              </a>
             </div>
-        
-            <div class="card__project">            
-              <h3 class="card__name"><%= project.name %></h3>
-              <p class="card__slogan"><%= project.slogan %></p>
-              
-              <p class="card__description"><%= project.descr %></p>
+          </div>
+        </article>
+
+        <section class="delete-project">
+          <button class="button--link">Delete project</button>
+        </section>
+  </section>
+
   
-              <div class="card__technicalInfo">
-                <p class="card__technologies"><%= project.technologies %></p>
-            
-                <a class="icon icon__www" href="<%= project.demo %>" title="Click here to see the project online" target="_blank">
-                  Web link
-                </a>
-                <a class="icon icon__github" href="<%= project.repo %>" title="Click here to see the project code" target="_blank">
-                  GitHub link
-                </a>
-              </div>
-            </div>
-      </article>
-    </section>
-</body>
+  </body>
 </html>

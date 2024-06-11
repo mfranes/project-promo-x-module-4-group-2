@@ -85,11 +85,15 @@
     font-size: 14px;
   }
 }
+
 .container {
-  background-image: url("../images/gradient_4.png");
+  background-image: url("/gradient_4.png");
   background-attachment: fixed;
   background-size: cover;
   background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .container-dark {
@@ -98,12 +102,13 @@
 }
 
 .hero {
-  margin-bottom: 3rem;
-  padding: 20px 0;
+  margin-bottom: 1rem;
+  padding: 10px 0;
   background-color: white;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
 }
 .hero__logo {
   width: 250px;
@@ -124,22 +129,19 @@
 
 .preview .projectImage {
   width: 100%;
-  aspect-ratio: 1/1;
-  outline: solid 1px var(--light-blue);
-  background-image: url("./public/assets/ebook-example-CgCH3O4P.jpg");
+  background-image: url("/ebook-example-CgCH3O4P.jpg");
   background-position: top center;
   background-size: cover;
 }
 .preview .card {
   margin-inline: 20px;
-  transform: translateY(-45px);
 }
 
 .profile__avatar {
   width: 100%;
   aspect-ratio: 1/1;
-  outline: solid 1px pink;
-  background-image: url("../images/ebook-example.jpg");
+  /* outline: solid 1px pink; */
+  background-image: url("/ebook-example.jpg");
   background-position: top center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -153,8 +155,10 @@
   border-radius: 20px;
   -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(20px);
-  background-color: rgba(255, 255, 255, 0.75);
-  /* ICONS */
+  background-color: rgba(248, 248, 248, 0.75);
+  max-width: 730px;
+  margin-bottom: 2rem;
+  transform: translateY(-4px);
 }
 .card__projectTitle {
   grid-column: 2;
@@ -171,10 +175,10 @@
   margin-bottom: 10px;
 }
 .card__authorPhoto {
-  width: 75px;
-  height: 75px;
+  width: 80px;
+  height: 80px;
   border-radius: 50%;
-  background-image: url("../images/avatar.webp");
+  background-image: url("/avatar.webp");
   background-position: center;
   background-size: cover;
   margin-bottom: 0.8rem;
@@ -229,8 +233,34 @@
   box-shadow: 0 0 2px 0 var(--color-greyish-brown-two);
 }
 .card .icon__www {
-  background-image: url("../images/icons/globe-solid.svg");
+  background-image: url("/globe-solid.svg");
 }
 .card .icon__github {
-  background-image: url("../images/icons/github.svg");
-}/*# sourceMappingURL=Alltogether.css.map */
+  background-image: url("/github.svg");
+}
+
+.button--link {
+  display: block;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin-inline: auto;
+  margin-block: 8px;
+  padding: 5px 18px;
+  color: var(--dark-blue);
+  font: var(--font-button);
+  text-transform: uppercase;
+  text-decoration: none;
+  border: solid 1px var(--dark-blue);
+  border-radius: 20px;
+}
+.button--link:hover {
+  background-color: var(--dark-blue);
+  color: white;
+  border: solid 1px transparent;
+}
+
+.delete-project{
+  margin-bottom: 10px;
+  margin-right: 10px;
+  align-self: flex-end;
+}
