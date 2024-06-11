@@ -257,3 +257,9 @@
   color: white;
   border: solid 1px transparent;
 }
+
+.delete-project{
+  margin-bottom: 10px;
+  margin-right: 10px;
+  align-self: flex-end;
+}
