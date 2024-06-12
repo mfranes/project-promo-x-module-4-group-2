@@ -149,7 +149,7 @@ server.post("/newproject", async (req, res)=>{
 server.get("/project/:idProject", async (req,res)=>{
   const conn = await connectToDatabase();
   const {idProject}= req.params;
-  const selectSQL = "SELECT * FROM project INNER JOIN author on project.fkAuthor = author.idAuthor where idProject=?;";
+  const selectSQL = "SELECT author.name AS autor, author.job, author.photo, project.name, project.slogan, project.technologies, project.repo, project.demo, project.descr, project.image, project.idProject FROM project INNER JOIN author on project.fkAuthor = author.idAuthor where idProject=?;";
   const [results]= await conn.query(selectSQL,[idProject]);
   res.render("detail",{project:results[0]});
   conn.end();
