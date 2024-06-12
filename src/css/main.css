@@ -94,6 +94,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  
 }
 
 .container-dark {
@@ -127,11 +128,18 @@
   margin-bottom: 8px;
 }
 
+
+.profile{
+  
+}
 .preview .projectImage {
   width: 100%;
-  background-image: url("/ebook-example-CgCH3O4P.jpg");
+  min-height: calc(100vh - 436px);
+  max-height: calc(100vh - 236px);
+  position: relative;
+  /* background-image: url("/ebook-example-CgCH3O4P.jpg"); */
   background-position: top center;
-  background-size: cover;
+  object-fit: cover;
 }
 .preview .card {
   margin-inline: 20px;
@@ -139,15 +147,17 @@
 
 .profile__avatar {
   width: 100%;
-  aspect-ratio: 1/1;
+  /* aspect-ratio: 1/1; */
   /* outline: solid 1px pink; */
-  background-image: url("/ebook-example.jpg");
+  /* background-image: url("/ebook-example.jpg"); */
   background-position: top center;
-  background-size: cover;
-  background-repeat: no-repeat;
+  object-fit: cover;
+  
 }
 
 .card {
+  position: relative;
+  bottom: 15px;
   display: grid;
   grid-template-columns: 40% 60%;
   color: var(--color-black);
@@ -156,7 +166,8 @@
   -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(20px);
   background-color: rgba(248, 248, 248, 0.75);
-  max-width: 730px;
+  max-width: 650px;
+  min-width: 276px;
   margin-bottom: 2rem;
   transform: translateY(-4px);
 }
@@ -178,9 +189,9 @@
   width: 80px;
   height: 80px;
   border-radius: 50%;
-  background-image: url("/avatar.webp");
+  /* background-image: url("/avatar.webp"); */
   background-position: center;
-  background-size: cover;
+  object-fit: cover;
   margin-bottom: 0.8rem;
 }
 .card__job {
@@ -188,20 +199,25 @@
   text-align: center;
   text-transform: capitalize;
 }
-.card__name {
+
+.card__name--author {
+  text-align: center;
+  text-transform: capitalize;
+}
+
+
+.card__project {
+  margin-right: 10px;
+}
+
+.card__project .card__name {
   font: var(--font-card-title);
   margin-bottom: 0.2rem;
   color: var(--dark-blue);
   text-align: left;
   text-transform: capitalize;
 }
-.card__name--author {
-  text-align: center;
-  text-transform: capitalize;
-}
-.card__project {
-  margin-right: 10px;
-}
+
 .card__slogan {
   font: var(--font-card-subtitle);
   margin-top: -0.2rem;

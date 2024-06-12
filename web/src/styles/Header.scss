@@ -10,7 +10,7 @@
 .header {
     display: flex;
     justify-content: space-between;
-    
+    align-items: center;
     background-color: white;
     padding: 15px;
     border-bottom: solid 1px var(--warm-grey);
@@ -37,7 +37,7 @@
   }
   
   .header .header__companyLogo {
-    height: 31px;
+    height: 23px;
     color: var(--dark-blue);
   }
   

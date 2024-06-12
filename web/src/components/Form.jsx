@@ -19,7 +19,7 @@ const Form = (props) => {
     autor: '',
     job: '',
   });
-
+  const [postError, setPostError] = useState("");
 
   const validateInput = (id, inputValue) => {
     const urlPattern = /^(https?:\/\/)?([a-zA-Z0-9_-]+\.)+[a-zA-Z]{2,}(\/[a-zA-Z0-9._-]*)*\/?$/;
@@ -37,22 +37,54 @@ const Form = (props) => {
     }
   };
 
-  
-
   const handleChange =(ev)=>{
     const id = ev.target.id;
     const value = ev.target.value;
     validateInput(id, value);
     props.getInput(id, value);
     setCardURL("");
+    setPostError("");
   }
 
+  const handleReset = (ev) =>{
+    ev.preventDefault();
+    props.resetData();
+  }
 
+  const isDataValidated = (data, errors) => {
+    let isValidated = true;
 
-    const handleReset = (ev) =>{
-      ev.preventDefault();
-      props.resetData();
+    // Valida datos completos
+    for (let key in data) {
+        if ((key !== 'idProject') && data[key] === '') {  // Si el campo esta vacio (sin las fotos)
+            console.log(`campo vacio -> ${key}`);
+            isValidated = false;
+            break; // Deja de iterar porque encontró un error
+        }
     }
+
+    for (let key in errors) {
+        if (errors[key]) {  // Si el id del campo tiene valor, o sea un error
+            console.log(`error validacion -> ${key} - ${errors[key]}`);
+            isValidated = false;
+            break; // Deja de iterar porque encontró un error
+        }
+    }
+
+    return isValidated; // Retorna si hay errores o no
+  }
+
+  const sendData = () =>{
+    if (isDataValidated(props.data, errorMsg)) {
+        postData(props.data).then((response) => {
+        setCardURL(response.url)
+        console.log(response);
+        props.resetData();
+      });
+    }else{
+      setPostError(`Make sure you've filled all the fields`);
+    }
+  }
 
   return (
     <form className="addForm">
@@ -94,22 +126,21 @@ const Form = (props) => {
           <div className="group_buttons">
             <div className="group_buttons-btn">
               <i className="fa-solid fa-image group_buttons-btn--icon"></i>
-              <GetAvatar id="image" text="Upload project image" updateAvatar={props.updateAvatar}/>
+              <GetAvatar id="image" text="Upload project image" updateAvatar={props.updateAvatar} errormsg={setPostError}/>
             </div>
             <div className="group_buttons-btn">
               <i className="fa-solid fa-image group_buttons-btn--icon"></i>
-              <GetAvatar id="photo" text="Upload a profile photo" updateAvatar={props.updateAvatar}/>
+              <GetAvatar id="photo" text="Upload a profile photo" updateAvatar={props.updateAvatar} errormsg={setPostError}/>
             </div>
           </div>
           <div className="group_save_reset">
-            <Button data={props.data} resetData={props.resetData} setCardURL={setCardURL} errorMsg={errorMsg}/>
+            <Button sendData={sendData}/>
             <button className="btn_rst" onClick={handleReset}><i className="fa-solid fa-trash-can group_save_reset-icon"></i></button>
           </div>
         </fieldset>
         <div className="cardURL">
           {/* {cardURL ? <Link to='/projectdetail'>View your Project <i className="fa-solid fa-square-arrow-up-right linkProject_icon"></i></Link> : <p className="errorFillForm"></p>} */}
-          {cardURL ? <a href={cardURL}>View your Project <i className="fa-solid fa-square-arrow-up-right linkProject_icon"></i></a> : <p className="errorFillForm"></p>}
-                  {/* Cuando Validemos añadir: Make sure you've filled all the fields */}
+          {cardURL ? <a href={cardURL}>View your Project <i className="fa-solid fa-square-arrow-up-right linkProject_icon"></i></a> : <p className="errorFillForm">{postError}</p>}
         </div>
       </form>
   )
