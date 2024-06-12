@@ -36,7 +36,7 @@ function App() {
   
  //fetch data for landing
   useEffect(()=>{
-    fetch('//localhost:3001/getprojects')
+    fetch('https://project-promo-x-module-4-group-2.onrender.com/getprojects')
         .then(response => response.json())
         .then(info => {
             setAllProjects(info.data);

@@ -45,7 +45,7 @@ server.post("/newproject", async (req, res)=>{
     const [resultProject] = await conn.query(insertProject, [data.name, data.slogan, data.technologies, data.repo, data.demo, data.desc, data.image, resultAuthor.insertId]);
     res.json({
       message: "Project created successfully", 
-      url: `http://localhost:3001/project/${resultProject.insertId}`
+      url: `https://project-promo-x-module-4-group-2.onrender.com/project/${resultProject.insertId}`
     });
     conn.end();
   } catch (error){
