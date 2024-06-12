@@ -43,7 +43,7 @@ const FakeCard = ({data, deleteItem}) => {
                 <img src={Git} alt="" />
               </a>
             </div>
-            <a className="popup__button-see" href={`http://localhost:3001/project/${idProject}`}>See project</a>
+            <a className="popup__button-see" href={import.meta.env.VITE_URL+`${idProject}`}>See project</a>
             {/* <Link className="popup__button-see" to='/projectdetail'>See project</Link> */}
           </div>
         </div>

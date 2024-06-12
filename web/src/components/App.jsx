@@ -36,7 +36,7 @@ function App() {
   
  //fetch data for landing
   useEffect(()=>{
-    fetch('https://project-promo-x-module-4-group-2.onrender.com/getprojects')
+    fetch(import.meta.env.VITE_URL+'/getprojects')
         .then(response => response.json())
         .then(info => {
             setAllProjects(info.data);
@@ -74,7 +74,7 @@ function App() {
   }
 
   const deleteItem = async (id) => {
-    const response = await fetch(`http://localhost:3001/delete/${id}`, {
+    const response = await fetch(import.meta.env.VITE_URL+`/delete/${id}`, {
       method: 'DELETE',
     });
   

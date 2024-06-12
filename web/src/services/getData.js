@@ -1,6 +1,6 @@
 
 function getData() {
-    return fetch('//localhost:3001/getprojects')
+    return fetch(import.meta.env.VITE_URL+'/getprojects')
         .then(response => response.json())
         .then(info => {
             return info.data;
