@@ -43,9 +43,11 @@ server.post("/newproject", async (req, res)=>{
     const [resultAuthor] = await conn.query(insertAuthor, [data.autor, data.job, data.photo]);
     const insertProject = 'INSERT INTO project (name, slogan, technologies, repo, demo, descr, image, fkAuthor) values (?,?,?,?,?,?,?,?);';
     const [resultProject] = await conn.query(insertProject, [data.name, data.slogan, data.technologies, data.repo, data.demo, data.desc, data.image, resultAuthor.insertId]);
+    const urlGenerado = process.env.API_HOST + 'project/' + resultProject.insertId;
+    console.log(urlGenerado);
     res.json({
       message: "Project created successfully", 
-      url: process.env.API_HOST + '/project/' + resultProject.insertId
+      url: urlGenerado
     });
     conn.end();
   } catch (error){
