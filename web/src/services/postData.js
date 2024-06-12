@@ -1,6 +1,6 @@
 const postData = (data) => {
 
-    return fetch(import.meta.env.VITE_URL+'/newproject', {
+    return fetch(import.meta.env.VITE_API_HOST+'/newproject', {
         method: 'POST',
         headers: {'Content-Type': 'application/json'},
         body: JSON.stringify(data)

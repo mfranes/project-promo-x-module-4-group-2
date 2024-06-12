@@ -36,7 +36,7 @@ function App() {
   
  //fetch data for landing
   useEffect(()=>{
-    fetch(import.meta.env.VITE_URL+'/getprojects')
+    fetch(import.meta.env.VITE_API_HOST+'/getprojects')
         .then(response => response.json())
         .then(info => {
             setAllProjects(info.data);
@@ -74,7 +74,7 @@ function App() {
   }
 
   const deleteItem = async (id) => {
-    const response = await fetch(import.meta.env.VITE_URL+`/delete/${id}`, {
+    const response = await fetch(import.meta.env.VITE_API_HOST+`/delete/${id}`, {
       method: 'DELETE',
     });
   
