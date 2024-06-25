@@ -280,3 +280,26 @@
   margin-right: 10px;
   align-self: flex-end;
 }
+
+body {
+  font: var(--font-normal);
+  color: black;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* Modo claro */
+body.light {
+  --background-color: var(--color-white);
+  --text-color: var(--color-black);
+}
+
+/* Modo oscuro */
+body.dark {
+  --background-color: var(--darkmode-background);
+  --text-color: var(--darkmode-font);
+}
+
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+}

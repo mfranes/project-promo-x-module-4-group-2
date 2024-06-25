@@ -12,14 +12,18 @@ export const DarkModeToggle = () => {
     undefined,
     (isSystemDark) => setIsDark(isSystemDark)
   );
-
   useEffect(() => {
     if (isDark) {
       document.body.classList.add('dark');
+      document.body.classList.remove('light');
     } else {
+      document.body.classList.add('light');
       document.body.classList.remove('dark');
     }
-  }, [isDark]); 
+  }, [isDark]);
+
+
+  
 
   return (
     <Toggle
